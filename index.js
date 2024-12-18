@@ -12,7 +12,7 @@ Mongodb();
 
 // Routes
 const AuthRoutes = require("./Routes/AuthRoutes");
-app.use(cors({ origin: "https://effervescent-meringue-5e623a.netlify.app/" }));
+app.use(cors());
 app.use("/api", AuthRoutes);
 
 app.get("/", (req, res) => {
