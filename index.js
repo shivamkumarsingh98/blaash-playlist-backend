@@ -23,3 +23,12 @@ app.get("/", (req, res) => {
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 });
+
+//deployment ment issue related code
+app.use((req, res, next) => {
+  if (req.url === "/favicon.ico") {
+    res.status(204).end();
+  } else {
+    next();
+  }
+});
